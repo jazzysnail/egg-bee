@@ -1,0 +1,22 @@
+{
+  "name": "egg-bee",
+  "version": "1.0.0",
+  "description": "",
+  "eggPlugin": {
+    "name": "bee",
+    "env": [
+      "local"
+    ]
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "egg",
+    "egg-bee",
+    "egg-plugin"
+  ],
+  "author": "leon",
+  "license": "ISC"
+}
