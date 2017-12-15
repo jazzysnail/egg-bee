@@ -2,6 +2,8 @@
 
 A interface distribution plugin for egg.
 
+> 暂未发布，若需要请 Fork 或 下载使用
+
 ## Install
 
 ``` base
