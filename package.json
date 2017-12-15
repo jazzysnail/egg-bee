@@ -1,12 +1,9 @@
 {
   "name": "egg-bee",
   "version": "1.0.0",
-  "description": "",
+  "description": "A interface distribution plugin for egg",
   "eggPlugin": {
-    "name": "bee",
-    "env": [
-      "local"
-    ]
+    "name": "bee"
   },
   "main": "index.js",
   "scripts": {
