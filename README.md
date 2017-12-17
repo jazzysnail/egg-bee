@@ -2,12 +2,10 @@
 
 A interface distribution plugin for egg.
 
-> 暂未发布，若需要请 Fork 或 下载使用
-
 ## Install
 
 ``` base
-$ npm i --save egg-bee
+$ npm i egg-bee --save
 ```
 
 ## Usage & Configuration
@@ -25,9 +23,9 @@ exports.bee = {
 module.exports = appInfo => {
   const config = {
     bee: {
-      serviceList: null, // 服务列表地址字符串或数组对象，不配置默认读取根目录 service.bee.config.js
-      serviceSymbol: 'apiname', // 服务形式标识用以匹配服务名
-      app: true // 是否挂载到 app 对象
+      serviceMap: null, // service map list, a path or object, if no configuration will find service.bee.config.js in baseDir.
+      serviceIdent: 'service', // Service identification, That is property name of params.
+      app: true // Mount to the app object
     }
   };
   return config;
@@ -48,7 +46,6 @@ module.exports = {
 
 ``` js
 // useing in controller
-// controller/api.js
 const Controller = require('egg').Controller;
 
 class ApiController extends Controller {
@@ -78,6 +75,8 @@ module.exports = app => {
 // app/router.js
 module.exports = app => {
   const { router, controller } = app;
+  // apiname is serviceIdent configuration of bee.
+  // plugin will match service configuration use ':apiname'. and add '/*' on the after.
   router.all('/api/:apiname/*', controller.api.index);
 };
 ```
@@ -88,8 +87,11 @@ module.exports = app => {
 
 __option:__
 
-- test(res) 容灾测试方法接受服务器相应为入参，返回一个布尔值，判定是否进入容灾
-- mixin 自定义请求体（method 和 data 不可写）
+- test(res)
+A test function of disaster recovery, accept res and return a boolean, if run disaster recovery will useing follow-up service configuration request the server again.
+
+- mixin （Not yet realized）
+Customize request.
 
 ## License
 [MIT](LICENSE)
