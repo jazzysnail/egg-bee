@@ -1,5 +1,9 @@
 # egg-bee
 
+[![npm](https://img.shields.io/npm/v/egg-bee.svg)](https://www.npmjs.com/package/egg-bee)
+[![npm](https://img.shields.io/npm/dm/egg-bee.svg)](https://www.npmjs.com/package/egg-bee)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/jazzysnail/egg-bee/blob/master/LICENSE)
+
 A interface distribution plugin for egg.
 
 ## Install
