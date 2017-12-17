@@ -76,8 +76,8 @@ module.exports = app => {
 module.exports = app => {
   const { router, controller } = app;
   // apiname is serviceIdent configuration of bee.
-  // plugin will match service configuration use ':apiname'. and add '/*' on the after.
-  router.all('/api/:apiname/*', controller.api.index);
+  // plugin will match service configuration use ':service'. and add '/*' on the after.
+  router.all('/api/:service/*', controller.api.index);
 };
 ```
 
@@ -88,9 +88,11 @@ module.exports = app => {
 __option:__
 
 - test(res)
+
 A test function of disaster recovery, accept res and return a boolean, if run disaster recovery will useing follow-up service configuration request the server again.
 
 - mixin （Not yet realized）
+
 Customize request.
 
 ## License
