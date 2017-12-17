@@ -79,7 +79,7 @@ module.exports = app => {
 // app/router.js
 module.exports = app => {
   const { router, controller } = app;
-  // apiname is serviceIdent configuration of bee.
+  // :service is serviceIdent configuration of bee.
   // plugin will match service configuration use ':service'. and add '/*' on the after.
   router.all('/api/:service/*', controller.api.index);
 };
