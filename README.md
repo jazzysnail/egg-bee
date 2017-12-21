@@ -95,9 +95,11 @@ __option:__
 
 A test function of disaster recovery, accept res and return a boolean, if run disaster recovery will useing follow-up service configuration request the server again.
 
-- mixin （Not yet realized）
+- mixin
 
-Customize request.
+A options object, to customize HttpClient.[Details](https://eggjs.org/zh-cn/core/httpclient.html#options-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3).
+
+but method and data is always use property of ctx.
 
 ## License
 [MIT](LICENSE)
