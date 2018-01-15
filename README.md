@@ -103,7 +103,7 @@ but method and data is always use property of ctx.
 
 ### bee.curl(url, option)
 
-just like `ctx.curl`，but the difference is that path will start with "service name".
+just like `ctx.curl`，but the difference is that url will start with "service name".
 
 ``` js
 // in controller
