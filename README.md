@@ -87,7 +87,7 @@ module.exports = app => {
 
 ## Api
 
-#### bee.collect(option)
+### bee.collect(option)
 
 __option:__
 
@@ -100,6 +100,21 @@ A test function of disaster recovery, accept res and return a boolean, if run di
 A options object, to customize HttpClient.[Details](https://eggjs.org/zh-cn/core/httpclient.html#options-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3).
 
 but method and data is always use property of ctx.
+
+### bee.curl(url, option)
+
+just like `ctx.curl`，but the difference is that path will start with "service name".
+
+``` js
+// in controller
+const { bee, header } = this.ctx;
+const checkLogin =  bee.curl('test_service_one/islogin', {
+  headers: header,
+  method: 'GET',
+  contentType: 'json',
+  dataType: 'json',
+});
+```
 
 ## License
 [MIT](LICENSE)
