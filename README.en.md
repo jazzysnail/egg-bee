@@ -4,9 +4,9 @@
 [![npm](https://img.shields.io/npm/dm/egg-bee.svg)](https://www.npmjs.com/package/egg-bee)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/jazzysnail/egg-bee/blob/master/LICENSE)
 
-> It is possible that the language document update is out of sync.
+> It is possible that this language document update is out of sync.
 
-A interface distribution plugin for egg.
+A fully configurable client request proxy plugin for egg.
 
 ## Install
 
@@ -31,7 +31,8 @@ module.exports = appInfo => {
     bee: {
       serviceMap: null, // service map list, a path or object, if no configuration will find service.bee.config.js in baseDir.
       serviceIdent: 'service', // Service identification, That is property name of params.
-      app: true // Mount to the app object
+      app: true, // Mount to the app object
+      mock: ['test_service_one', ['test_service_two', 'mock']],// ['service name', ['service name', 'mock data path']]
     }
   };
   return config;
@@ -48,6 +49,22 @@ module.exports = {
     path: 'http://localhost:82/V1/test_service_one'
   }]
 };
+```
+
+``` js
+// app/mock/test_service_one/list.js
+// The path to the mock file uses the same path as the interface
+module.exports = {
+  status: 0,
+  data_list: [{
+    id: '007',
+    name: 'leon'
+  }],
+  total: 1,
+  index: 1,
+  size: 15,
+  msg: "test data"
+}
 ```
 
 ``` js

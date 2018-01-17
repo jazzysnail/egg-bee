@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  text_1: [{
-    path: 'http://localhost:9000/text_1'
+  test_service_one: [{
+    path: 'http://localhost:81/V1/test_service_one'
   }, {
-    path: 'http://localhost:8000/text_1'
+    path: 'http://localhost:82/V1/test_service_one'
   }]
 };
