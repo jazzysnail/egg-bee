@@ -124,7 +124,7 @@ __option:__
 
 请求配置混合字段，用于自定义 HttpClient 的请求配置。更多查看 [Details](https://eggjs.org/zh-cn/core/httpclient.html#options-%E5%8F%82%E6%95%B0%E8%AF%A6%E8%A7%A3)。
 
-插件还会默认将来自客户端的请求头混入服务端请求头部中。
+插件还会默认将客户端携带的 cookie 自动混合如服务端请求头中。
 
 但是 method 和 data 字段目前不支持被覆盖，插件本身是为一些列需要分发到不同处理服务上的请求做代理的，所以我们只需要注册一个接受任何请求方法的标识路由，剩下的就交给 egg-bee 吧。
 
